@@ -89,7 +89,7 @@ def objfun(x):
     return Weight_payload
 
 def constr_f(x):
-r
+
     Weight_payload, SM, lt, Bw , AR = resultados(x)
 
     return SM
