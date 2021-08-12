@@ -20,7 +20,7 @@ def Avl_exe(nameavl):
          p.kill()
         
             
-    # Open file st to get 
+    #  Open the st file to get the data.
 
     Save = []
     fid = open(nameavl,"r")
