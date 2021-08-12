@@ -11,19 +11,17 @@ def empuxo(V,rho):
     
     ## Dados das helices
     # D k c* CL* gamma n Test
-    helice = [0.32385, 0.75, 0.022, 0.903, 0.0, 200.00, 42.60] # APC 12.75 x 3.75
+    helice = [0.32385, 0.75, 0.022, 0.903, 0.0, 200.00, 41.72] # APC 12.75 x 3.75
     D = helice[0] # [m] - Diametro da helice
-    k = helice[1] # [adimen] - 75# do raio da helice para analise
+    k = helice[1] # [adimen] - 75# do raio d
     c_ast = helice[2] # [m] - Corda caracteristica na regiao de 75# do raio da helice
-    CL_ast = helice[3] # [adimen] - Coeficiente de sustentacao em 75# do raio da helice
-    gamma = helice[4] # [adimen] - Caracteristica de 1/(L/D) proposta por vural, proximo de 0
-    n = helice[5] # [rps] - Rotacoes por segundo da helice em maxima potencia do motor
+    CL_ast = helice[3] # [adimen] -
+    gamma = helice[4] # [adimen] - 
+    n = helice[5] # [rps] - Rpm
     J =  V/(n*D) # [adimen] - Razao de avanco da helice
     T = (k**2)*(math.pi**2)*c_ast*0.5*rho*(n**2.0)*(D**3)*(CL_ast - 2.0*J/k)*math.sqrt(1.0+(J/(k*math.pi))**2.0)*(1-J*math.tan(gamma)/(k*math.pi))
     Test = helice[6] # Empuxo estatico
-    Tdin = T # Empuxo dinamico avaliado para determinada velocidade
-    ## Se o empuxo dinamico e superior ao empuxo estatico, assumir o estatico.
-
+    Tdin = T # Empuxo dinamico avaliado
     if Tdin >= Test:
         Tdin = Test
 
